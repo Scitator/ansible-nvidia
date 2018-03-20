@@ -1,0 +1,5 @@
+- hosts: gpus
+  become: true
+  roles:
+    - role: new-user-setup
+      username: "{{ server_username }}"

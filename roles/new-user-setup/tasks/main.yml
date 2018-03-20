@@ -1,0 +1,20 @@
+---
+- name: Ensure user is present.
+  user:
+    name: "{{ username }}"
+    shell: /bin/bash
+    state: present
+
+- name: Set authorized key took from file
+  authorized_key:
+    user: "{{ username }}"
+    state: present
+    key: https://github.com/{{ username }}.keys
+
+- name: Update bashrc for Conda for {{ username }} user
+  lineinfile:
+    dest: "/home/{{ username }}/.bashrc"
+    line: "alias iDevConda='export PATH=\"/usr/local/anaconda/bin:$PATH\"' "
+    owner: "{{ username }}"
+    insertafter: EOF
+    create: True
