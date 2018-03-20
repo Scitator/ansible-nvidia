@@ -3,6 +3,14 @@
   roles:
     - { role: base}
     - { role: anaconda}
+    - role: pyenv
+      pyenv_env: "system"
+      pyenv_update_git_install: no
+      pyenv_enable_autocompletion: no
+      pyenv_python_versions:
+        - 3.6.0
+        - 2.7.11
+      pyenv_virtualenvs: {  }
     - { role: docker-ce, docker_version: latest }
     - { role: cuda, cuda_version_major: 9, cuda_version_minor: 1 }
     - { role: cudnn, cuda_version_major: 9, cuda_version_minor: 1, cudnn_version: 7 }
