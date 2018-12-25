@@ -61,3 +61,9 @@ ssh-copy-id  root@192.168.1.2
 ```
 ansible-playbook gpus.yml
 ```
+
+One more hosts example
+```
+[gpus]
+{GPU_NAME} ansible_host={GPU_IP} ansible_python_interpreter=/usr/bin/python3 ansible_ssh_port={GPU_PORT} ansible_ssh_user=root ansible_ssh_pass=root ansible_root_pass=root ansible_sudo_pass=root
+```

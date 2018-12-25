@@ -2,3 +2,7 @@ hosts
 *.retry
 **/*.swp
 **/*.retry
+inventory
+*.sh
+*.DS_Store
+.idea/

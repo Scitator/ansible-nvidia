@@ -1,22 +1,10 @@
 - hosts: gpus
   become: true
+  become_user: root
   roles:
-    - role: base
-    - role: anaconda
-    - role: pyenv
-      pyenv_env: "system"
-      pyenv_update_git_install: no
-      pyenv_enable_autocompletion: no
-      pyenv_python_versions: {  }
-      pyenv_virtualenvs: {  }
-    - role: docker-ce
-      docker_version: latest
-    - role: cuda
-      cuda_version_major: 9
-      cuda_version_minor: 1
-    - role: cudnn
-      cuda_version_major: 9
-      cuda_version_minor: 1
-      cudnn_version: 7 
-    - role: nvidia-docker
-      nvidia_docker_version: 2.0.3
+    - { role: base }
+    - { role: anaconda }
+    - { role: docker-ce, docker_version: 18.09.0 }
+    - { role: cuda, cuda_version_major: 10, cuda_version_minor: 0 }
+    - { role: cudnn, cuda_version_major: 10, cuda_version_minor: 0, cudnn_version: 7.3 }
+    - { role: nvidia-docker, nvidia_docker_version: 2.0.3 }
