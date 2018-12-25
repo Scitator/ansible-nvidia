@@ -1,6 +1,3 @@
 [submodule "roles/anaconda"]
 	path = roles/anaconda
 	url = git@github.com:andrewrothstein/ansible-anaconda.git
-[submodule "roles/pyenv"]
-	path = roles/pyenv
-	url = git@github.com:avanov/ansible-galaxy-pyenv.git
