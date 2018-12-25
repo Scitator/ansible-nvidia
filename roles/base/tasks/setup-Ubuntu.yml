@@ -1,4 +1,10 @@
 ---
+- name:
+  shell: "sudo add-apt-repository universe"
+
+- name:
+  shell: "sudo apt update"
+
 - name: Update and upgrade apt packages
   apt:
     upgrade: yes
@@ -13,9 +19,14 @@
     - curl
     - wget
     - git
+    - zip
+    - unzip
     - rsync
     - iotop
     - iftop
     - unzip
     - python3-pip
-    - openvpn 
+    - openvpn
+    - docker
+    - docker-compose
+    - docker-py
