@@ -15,8 +15,8 @@
     upgrade: yes
     update_cache: yes
 
-- name: Install main packages
-  apt: name={{item}} state=present
+- name: Install main apt packages
+  apt: name={{item}} state=latest
   with_items:
     - htop
     - tmux
@@ -31,7 +31,18 @@
     - iftop
     - unzip
     - python3-pip
-    - openvpn
     - docker
+    # - docker-compose
+    - jq
+    - ncdu
+    - nfs-common
+    - httpie
+
+- name: Install main pip packages
+  pip: name={{item}} state=latest
+  with_items:
+    - pip
+    - docker
+    - ansible
+    - jmespath
     - docker-compose
-    - docker-py

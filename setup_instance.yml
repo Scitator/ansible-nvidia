@@ -1,6 +1,6 @@
 - hosts: gpus
   become: true
-  become_user: root
+  # become_user: root
   roles:
     - { role: base }
     - { role: anaconda }
