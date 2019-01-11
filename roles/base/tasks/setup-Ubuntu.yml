@@ -31,18 +31,18 @@
     - iftop
     - unzip
     - python3-pip
-    - docker
-    # - docker-compose
     - jq
     - ncdu
     - nfs-common
     - httpie
+#    - docker
+#    - docker-compose
 
 - name: Install main pip packages
   pip: name={{item}} state=latest
   with_items:
     - pip
-    - docker
     - ansible
     - jmespath
-    - docker-compose
+#    - docker
+#    - docker-compose

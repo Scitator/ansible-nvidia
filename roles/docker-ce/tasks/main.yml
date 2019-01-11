@@ -42,7 +42,7 @@
     name: "docker-{{ docker_edition }}"
     update_cache: True
     cache_valid_time: "{{ docker_apt_cache_time }}"
-    state: "latest"
+    state: "{{ docker_version_full }}"
   when: not docker_remove_package
 
 - name: Remove Upstart config file
