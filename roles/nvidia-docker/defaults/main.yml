@@ -1,4 +1,6 @@
 ---
 
 ubuntu_version: ubuntu18.04
+libnvidia_version: 1.0.0-1
+nvidia_runtime_version: 2.0.0+docker18.09.0-1
 nvidia_docker_version: 2.0.3+docker18.09.0-1
