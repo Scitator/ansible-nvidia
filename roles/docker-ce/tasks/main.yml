@@ -38,11 +38,10 @@
   when: docker_remove_package
 
 - name: Install Docker
-  apt:
-    name: "docker-{{ docker_edition }}"
-    update_cache: True
-    cache_valid_time: "{{ docker_apt_cache_time }}"
-    state: "latest"
+  apt: name={{item}} state=present update_cache=yes
+  with_items:
+    - "docker-{{ docker_edition }}={{ docker_version }}"
+    - "docker-{{ docker_edition }}-cli={{ docker_version }}"
   when: not docker_remove_package
 
 - name: Remove Upstart config file

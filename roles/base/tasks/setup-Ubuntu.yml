@@ -21,6 +21,7 @@
     - htop
     - tmux
     - vim
+    - neovim
     - curl
     - wget
     - git
@@ -31,18 +32,19 @@
     - iftop
     - unzip
     - python3-pip
-    - docker
-    # - docker-compose
     - jq
     - ncdu
     - nfs-common
     - httpie
+    - awscli
+    - ranger
+    - extundelete
 
 - name: Install main pip packages
   pip: name={{item}} state=latest
   with_items:
     - pip
-    - docker
     - ansible
     - jmespath
+    - docker
     - docker-compose

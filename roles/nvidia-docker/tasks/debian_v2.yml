@@ -34,9 +34,10 @@
   changed_when: False
 
 - name: nvidia-docker (v2) is installed
-  apt:
-    name: "nvidia-docker2={{ nvidia_docker_version }}"
-    state: present
+  apt: name={{item}} state=present
+  with_items:
+    - "nvidia-container-runtime={{ nvidia_docker_version }}"
+    - "nvidia-docker2={{ nvidia_docker_version }}"
   notify: restart docker service
 
 - name: confirm content of /etc/docker/daemon.json after installation of nvidia-docker2
